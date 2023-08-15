@@ -7,7 +7,11 @@ To set up this project run the following command on the terminal
 ```bash
    npm i express mongoose ejs jwt
 ```
+To encrypt the password install bcrypt by running the following command 
 
+```bash
+   npm i bcrypt
+```
 If you haven't installed `nodemon` before install it using the following command
 
 ```bash
