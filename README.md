@@ -9,5 +9,5 @@ To set up this project run the following commands
    npm i express mongoose ejs
 ```
 
-Just have fun with this project :sunglasses:
+Just have fun with this project :grin:
 
