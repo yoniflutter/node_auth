@@ -24,9 +24,15 @@ To set up your server with express write down the following code
     res.send('Hello');
    });
 
-   app.listen(3000,()=>{
-    console.log("Server listening at port 3000");
+   app.listen(5000,()=>{
+    console.log("Server listening at port 5000");
    });
+```
+
+To start the server run the following command
+
+```bash
+   npm run build
 ```
 
 Just have fun with this project :grin:

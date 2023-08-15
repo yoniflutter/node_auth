@@ -2,12 +2,12 @@
   "name": "node_auth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "run": "nodemon app"
+    "build": "nodemon app"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yohannes Sintayehu",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
