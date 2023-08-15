@@ -5,7 +5,6 @@ This project shows how authentication is done in node js with jwt (json web toke
 To set up this project run the following command on the terminal
 
 ```bash
-   npm init -y
    npm i express mongoose ejs jwt
 ```
 
