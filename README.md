@@ -14,5 +14,20 @@ If you haven't installed `nodemon` before install it using the following command
    npm i nodemon -g
 ```
 
+To set up your server with express write down the following code
+
+```javascript
+   const express = require('express');
+   const app = express();
+
+   app.get('/', (req, res)=>{
+    res.send('Hello');
+   });
+
+   app.listen(3000,()=>{
+    console.log("Server listening at port 3000");
+   })
+```
+
 Just have fun with this project :grin:
 
