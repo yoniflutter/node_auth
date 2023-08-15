@@ -26,7 +26,7 @@ To set up your server with express write down the following code
 
    app.listen(3000,()=>{
     console.log("Server listening at port 3000");
-   })
+   });
 ```
 
 Just have fun with this project :grin:
