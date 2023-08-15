@@ -8,5 +8,11 @@ To set up this project run the following command on the terminal
    npm i express mongoose ejs jwt
 ```
 
+If you haven't installed `nodemon` before install it using the following command
+
+```bash
+   npm i nodemon -g
+```
+
 Just have fun with this project :grin:
 
