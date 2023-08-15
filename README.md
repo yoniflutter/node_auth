@@ -2,7 +2,7 @@
 
 This project shows how authentication is done in node js with jwt (json web token)
 
-To set up this project run the following commands on the terminal
+To set up this project run the following command on the terminal
 
 ```bash
    npm init -y
