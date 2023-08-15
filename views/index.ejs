@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Auth With Node Js</title>
-</head>
+<%- include('./partials/head.ejs') %>
 <body>
-    
+    <nav>
+        <h2>E-coders</h2>
+        <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="image">
+            <img src="./images/products.png" alt="product image">
+        </div>
+        <a class="btn" href="/home">Buy Products</a>
+    </main>
 </body>
-</html>
+<%- include('./partials/footer.ejs') %>
