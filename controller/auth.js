@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const validate = (e)=>{
     var error = {
@@ -14,6 +15,12 @@ const validate = (e)=>{
         });
     }
     return error;
+}
+
+const createToken = (id)=>{
+    return jwt.sign({ id }, "secret", {
+        expiresIn: 3600
+    });
 }
 
 module.exports.index = (req, res)=>{
@@ -43,8 +50,10 @@ module.exports.signup_post = async (req, res)=>{
             name: req.body.name,
             password: hashedPassword
         });
-        res.status(200).json(user)
-    }catch (e){
+        const token = createToken(user._id);
+        res.cookie("auth", token);
+        res.send(token);
+    } catch (e) {
         const err = validate(e);
         res.status(400).json({error: err});
     }

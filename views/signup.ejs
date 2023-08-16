@@ -1,18 +1,38 @@
 <%- include('./partials/head.ejs') %>
-<div class="form-wrapper">
-    <form action="/signup" method="post">
-        <h3 class="title">Signup to Continue</h3>
-        <div class="name-wrapper">
-            <label for="name">User Name</label>
-            <input type="text" name="name" placeholder="User Name" id="name">
-        </div>
+    <div class="form-wrapper">
+        <form action="/signup" method="post">
+            <h3 class="title">Signup to Continue</h3>
+            <div class="name-wrapper">
+                <label for="name">User Name</label>
+                <input type="text" name="name" placeholder="User Name" id="name">
+            </div>
 
-        <div class="password-wrapper">
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" id="password">
-        </div>
+            <div class="password-wrapper">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password" id="password">
+            </div>
 
-        <button type="submit">Login</button>
-    </form>
-</div>
-<%- include('./partials/footer.ejs') %>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        var form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = form.name.value;
+            const password = form.password.value;
+
+            try {
+                const res = await fetch( '/signup', {
+                    method: 'POST',
+                    body: JSON.stringify({ name, password}),
+                    headers: { 'Content-Type' : 'application/json' }
+                })
+                console.log(res);
+                console.log(JSON.stringify({ name, password}));
+            } catch (e) {
+                console.log(e);
+            }
+        })
+    </script>
+    <%- include('./partials/footer.ejs') %>
