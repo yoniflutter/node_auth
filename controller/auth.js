@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const bcrypt = require('bcrypt');
 
 const validate = (e)=>{
     var error = {
@@ -36,9 +37,10 @@ module.exports.login_post = (req, res)=>{
 }
 module.exports.signup_post = async (req, res)=>{
     try{
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
         const user = await User.create({
             name: req.body.name,
-            password: req.body.password
+            password: hashedPassword
         });
         res.status(200).json(user)
     }catch (e){
