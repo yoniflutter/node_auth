@@ -1,3 +1,20 @@
+const User = require("../models/user");
+
+const validate = (e)=>{
+    var error = {
+        name: '',
+        password: ''
+    };
+    if(e.code === 11000){
+        error.name = 'This user name exists';
+    }else{
+        Object.values(e.errors).forEach(({ properties }) =>{
+            error[properties.path] = properties.message;
+        });
+    }
+    return error;
+}
+
 module.exports.index = (req, res)=>{
     res.render('index');
 }
@@ -15,9 +32,18 @@ module.exports.signup_get = (req, res)=>{
 }
 
 module.exports.login_post = (req, res)=>{
-    res.send('login');
+    res.send(req.body);
 }
-module.exports.signup_post = (req, res)=>{
-    res.send('signup');
+module.exports.signup_post = async (req, res)=>{
+    try{
+        const user = await User.create({
+            name: req.body.name,
+            password: req.body.password
+        });
+        res.status(200).json(user)
+    }catch (e){
+        const err = validate(e);
+        res.status(400).json({error: err});
+    }
 }
 
