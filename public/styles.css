@@ -8,12 +8,19 @@
 :root{
     --bg-color: #8e86864d;
     --text-color-white: rgb(100, 98, 98);
+    --text-white: rgb(255, 255, 255);
     --btn-color: #d6cf0d85;
     --btn-hover-color: rgba(198, 174, 22, 0.641);
+    --text-color-black: rgb(45, 42, 42);
+    --shadow-color: rgb(175, 174, 174);
+    --card-background: rgb(222, 222, 222);
+    --form-background: rgb(191, 191, 191);
+    --form-btn-color: rgb(26, 25, 25);
 }
 
 body{
     background-color: var(--bg-color);
+    height: 100vh;
 }
 
 /* nav bar */
@@ -23,11 +30,19 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 nav h2{
-    color: var(--text-color-white);
     cursor: pointer;
+}
+
+nav h2 a{
+    text-decoration: none;
+    color: var(--text-color-white);
 }
 
 nav ul {
@@ -54,6 +69,7 @@ nav ul li a:hover{
 /* main page */
 main{
     display: flex;
+    flex-wrap: wrap;
     height: 100vh;
     align-items: center;
 }
@@ -63,6 +79,8 @@ main .image{
 }
 
 main .btn{
+    text-decoration: none;
+    color: var(--text-color-black);
     width: 120px;
     height: 50px;
     background-color: var(--btn-color);
@@ -77,4 +95,95 @@ main .btn{
 main .btn:hover{
     border: 1.3px solid black;
     background-color: transparent;
+}
+
+/* home */
+.wrapper{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.wrapper .products{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.wrapper .products .product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 5px;
+    margin: 10px;
+    transition: transform 0.5s;
+    box-shadow: 3px 3px 20px var(--shadow-color);
+}
+
+.wrapper .products .product:hover{
+    transform: scale(1.03);
+}
+
+/* login and signup */
+.form-wrapper{
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--form-background);
+    box-shadow: var(--shadow-color);
+    border-radius: 5px;
+}
+
+form h3{
+    margin: 10px;
+}
+
+form .name-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+form .name-wrapper input{
+    padding: 10px;
+    outline: none;
+    border: none;
+    margin: 5px 0px;
+}
+
+form .password-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+form .password-wrapper input{
+    padding: 10px;
+    outline: none;
+    border: none;
+    margin: 5px 0px;
+}
+
+form button{
+    width: 90px;
+    height: 30px;
+    background-color: var(--form-btn-color);
+    border: none;
+    outline: none;
+    color: var(--text-white);
+    border-radius: 2px;
 }
