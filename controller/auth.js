@@ -35,6 +35,7 @@ module.exports.signup_get = (req, res)=>{
 module.exports.login_post = (req, res)=>{
     res.send(req.body);
 }
+
 module.exports.signup_post = async (req, res)=>{
     try{
         const hashedPassword = await bcrypt.hash(req.body.password, 10);

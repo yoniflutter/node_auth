@@ -5,9 +5,9 @@ This project shows how authentication is done in node js with jwt (json web toke
 To set up this project run the following command on the terminal
 
 ```bash
-   npm i express mongoose ejs jwt
+   npm i express mongoose ejs jsonwebtoken cookie-parser
 ```
-To encrypt the password install bcrypt by running the following command 
+To encrypt the password install bcrypt by running the following command.
 
 ```bash
    npm i bcrypt
@@ -38,6 +38,14 @@ To start the server run the following command
 ```bash
    npm run build
 ```
+
+`Note: `If you are cloning this project you don't have to do all the above things you just have to do the following command
+
+```bash
+   npm install
+```
+
+
 
 Just have fun with this project :grin:
 
