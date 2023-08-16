@@ -39,7 +39,7 @@ To start the server run the following command
    npm run build
 ```
 
-`Note: `If you are cloning this project you don't have to do all the above things you just have to do the following command
+`Note:` If you are cloning this project you don't have to do all the above things you just have to do the following command
 
 ```bash
    npm install
